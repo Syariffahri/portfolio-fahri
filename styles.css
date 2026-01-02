@@ -691,81 +691,51 @@ img {
 }
 
 .skill-card {
-    padding: 30px;
+    padding: 25px 30px;
+    padding-left: 35px;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .skill-card::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 15px;
+    bottom: 15px;
     left: 0;
-    width: 100%;
-    height: 3px;
+    width: 4px;
     background: var(--gradient);
-    transform: scaleX(0);
+    border-radius: 2px;
     transition: var(--transition);
 }
 
 .skill-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    border-color: var(--accent-1);
 }
 
 .skill-card:hover::before {
-    transform: scaleX(1);
-}
-
-.skill-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    background: var(--gradient);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.skill-icon {
-    font-size: 1.8rem;
+    width: 6px;
+    top: 10px;
+    bottom: 10px;
 }
 
 .skill-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
 .skill-card p {
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-}
-
-.skill-bar {
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--gradient);
-    border-radius: 3px;
-    width: 0;
-    transition: width 1.5s ease-out;
-}
-
-.skill-percent {
-    display: block;
-    text-align: right;
-    font-size: 0.85rem;
-    color: var(--accent-1);
-    margin-top: 8px;
-    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    line-height: 1.5;
 }
 
 /* ===== Certifications Section ===== */
