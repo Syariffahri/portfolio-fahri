@@ -1,0 +1,5 @@
+# robots.txt for syariffahri.com
+User-agent: *
+Allow: /
+
+Sitemap: https://syariffahri.com/sitemap.xml

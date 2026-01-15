@@ -1,302 +1,133 @@
-// ===== Smooth Scroll Navigation =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navHeight;
-            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }
-        document.getElementById('navMenu').classList.remove('active');
-        document.getElementById('navToggle').classList.remove('active');
-    });
-});
-
-// ===== Navbar Scroll Effect =====
-const navbar = document.getElementById('navbar');
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    navbar.classList.toggle('scrolled', currentScroll > 50);
-    lastScroll = currentScroll;
-});
-
-// ===== Mobile Menu Toggle =====
+// ===== Mobile Navigation =====
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+// ===== Smooth Scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return; // Skip if just "#"
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    });
 });
-
-// ===== Intersection Observer for Scroll Animations =====
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-
-const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            fadeObserver.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
-
-// ===== Skill Progress Bars Animation =====
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progress = entry.target.getAttribute('data-progress');
-            entry.target.style.width = progress + '%';
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.skill-progress').forEach(bar => skillObserver.observe(bar));
 
 // ===== Counter Animation =====
+const counters = document.querySelectorAll('.stat-number');
+let animated = false;
+
+const animateCounters = () => {
+    if (animated) return;
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 30);
+    });
+    animated = true;
+};
+
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counter = entry.target.querySelector('.stat-number');
-            const target = parseInt(counter.getAttribute('data-count'));
-            let count = 0;
-            const duration = 2000;
-            const step = target / (duration / 16);
-
-            const updateCounter = () => {
-                count += step;
-                if (count < target) {
-                    counter.textContent = Math.floor(count);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target;
-                }
-            };
-            updateCounter();
-            counterObserver.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) animateCounters();
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.counter-animate').forEach(el => counterObserver.observe(el));
+counters.forEach(c => counterObserver.observe(c));
 
-// ===== Active Navigation Link =====
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) current = section.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-    });
-});
-
-// ===== Parallax Effect on Scroll =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-
-    // Parallax for hero elements
-    const heroVisual = document.querySelector('.hero-visual');
-    if (heroVisual && scrolled < window.innerHeight) {
-        heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-
-    // Parallax for floating badges
-    document.querySelectorAll('.floating-badge').forEach((badge, i) => {
-        const speed = 0.1 + (i * 0.05);
-        badge.style.transform = `translateY(${Math.sin(scrolled * 0.01 + i) * 10}px)`;
-    });
-});
-
-// ===== Magnetic Button Effect =====
-document.querySelectorAll('.magnetic').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translate(0, 0)';
-    });
-});
-
-// ===== Tilt Effect on Cards =====
-document.querySelectorAll('.tilt-effect').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
-    });
-});
-
-// ===== Floating Particles Background =====
-function createParticles() {
-    const container = document.getElementById('particles');
-    if (!container) return;
-
-    const particleCount = 30;
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-        particle.style.width = (2 + Math.random() * 4) + 'px';
-        particle.style.height = particle.style.width;
-        container.appendChild(particle);
-    }
-}
-createParticles();
-
-// ===== Smooth Reveal on Scroll for Skill Tags =====
-const staggerObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, index * 50);
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.skills-tags .skill-tag').forEach(tag => staggerObserver.observe(tag));
-
-// ===== EmailJS Initialization =====
+// ===== EmailJS with Spam Protection =====
 emailjs.init('vQQiPTdxWlyBZkO7y');
 
-// ===== Contact Form with EmailJS =====
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<span>Sending...</span>';
-    btn.disabled = true;
+let lastSubmitTime = 0;
+const RATE_LIMIT_MS = 30000; // 30 seconds between submissions
 
-    // Get form data
-    const templateParams = {
-        from_name: document.getElementById('name').value,
-        from_email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value || 'Contact from Portfolio',
-        message: document.getElementById('message').value
-    };
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    // Send email via EmailJS
-    emailjs.send('service_e9j242k', 'template_fj1fvgx', templateParams)
-        .then(() => {
-            btn.innerHTML = '<span>Message Sent! ✓</span>';
-            btn.style.background = 'linear-gradient(135deg, #00c853 0%, #00e676 100%)';
+        // Honeypot check - if filled, it's a bot
+        const honeypot = document.getElementById('website');
+        if (honeypot && honeypot.value) {
+            console.log('Spam detected');
+            return;
+        }
+
+        // Rate limit check
+        const now = Date.now();
+        if (now - lastSubmitTime < RATE_LIMIT_MS) {
+            const remaining = Math.ceil((RATE_LIMIT_MS - (now - lastSubmitTime)) / 1000);
+            alert(`Please wait ${remaining} seconds before sending another message.`);
+            return;
+        }
+
+        const btn = this.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        emailjs.send('service_e9j242k', 'template_fj1fvgx', {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value || 'Portfolio Contact',
+            message: document.getElementById('message').value
+        }).then(() => {
+            lastSubmitTime = Date.now();
+            btn.textContent = 'Sent ✓';
+            btn.style.background = '#00D4AA';
             this.reset();
             setTimeout(() => {
-                btn.innerHTML = originalHTML;
+                btn.textContent = originalText;
                 btn.style.background = '';
                 btn.disabled = false;
             }, 3000);
-        })
-        .catch((error) => {
-            console.error('EmailJS Error:', error);
-            btn.innerHTML = '<span>Failed to send ✕</span>';
-            btn.style.background = 'linear-gradient(135deg, #ff1744 0%, #f44336 100%)';
+        }).catch(() => {
+            btn.textContent = 'Failed ✕';
+            btn.style.background = '#ff4444';
             setTimeout(() => {
-                btn.innerHTML = originalHTML;
+                btn.textContent = originalText;
                 btn.style.background = '';
                 btn.disabled = false;
             }, 3000);
         });
-});
-
-// ===== Cursor Glow Effect =====
-const cursor = document.createElement('div');
-cursor.className = 'cursor-glow';
-cursor.style.cssText = `
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    transition: opacity 0.3s;
-`;
-document.body.appendChild(cursor);
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-// ===== Initial Animation on Load =====
-window.addEventListener('load', () => {
-    document.querySelectorAll('.hero .fade-in').forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), i * 100);
     });
-});
+}
 
-// ===== Scroll Progress Indicator =====
-const progressBar = document.createElement('div');
-progressBar.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    z-index: 10000;
-    transition: width 0.1s;
-`;
-document.body.appendChild(progressBar);
-
+// ===== Nav Background on Scroll =====
+const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    progressBar.style.width = scrolled + '%';
-});
-
-// ===== Certificate Modal Functions =====
-const certData = {
-    csa: {
-        file: 'cert-csa.pdf',
-        caption: 'BNSP Certified System Analyst (CSA) - Valid: 01/2025 - 01/2028'
-    },
-    cpro: {
-        file: 'cert-cpro.pdf',
-        caption: 'BNSP Certified Professional Programmer (CPro) - Valid: 01/2025 - 01/2028'
-    }
-};
-
-function openCertModal(certType) {
-    // Open PDF in new tab
-    if (certData[certType]) {
-        window.open(certData[certType].file, '_blank');
-    }
-}
-
-function closeCertModal() {
-    const modal = document.getElementById('certModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-// Close modal on escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeCertModal();
+    if (window.scrollY > 100) {
+        nav.style.background = 'rgba(248, 248, 248, 0.98)';
+    } else {
+        nav.style.background = 'rgba(248, 248, 248, 0.9)';
     }
 });
