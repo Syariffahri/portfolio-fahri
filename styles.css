@@ -557,6 +557,14 @@ section h2 {
     aspect-ratio: 4/3;
 }
 
+.work-card:nth-child(11) .work-image {
+    aspect-ratio: 3/2;
+}
+
+.work-card:nth-child(12) .work-image {
+    aspect-ratio: 1/1;
+}
+
 .work-image {
     width: 100%;
     background-size: cover;
@@ -583,6 +591,17 @@ section h2 {
 .work-overlay h3 {
     font-size: 1.2rem;
     font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.work-year {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(0, 212, 170, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
     margin-bottom: 8px;
 }
 
@@ -751,6 +770,14 @@ section h2 {
     font-size: 0.75rem;
     font-weight: 600;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.eye-icon {
+    width: 14px;
+    height: 14px;
 }
 
 /* ===== Experience ===== */
