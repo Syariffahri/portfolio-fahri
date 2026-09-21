@@ -1,5 +1,5 @@
-# robots.txt for syariffahri.com
+# robots.txt for fahridrus.com
 User-agent: *
 Allow: /
 
-Sitemap: https://syariffahri.com/sitemap.xml
+Sitemap: https://fahridrus.com/sitemap.xml

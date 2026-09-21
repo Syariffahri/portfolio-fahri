@@ -1,531 +1,137 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syarif Muhammad Fahri — Senior Flutter Developer</title>
-    <meta name="description"
-        content="Senior Flutter Developer dengan 5+ tahun pengalaman. Spesialisasi mobile apps berkualitas tinggi untuk Android & iOS.">
+    <meta name="description" content="Senior Flutter Developer building and shipping complete mobile and web products with Flutter, Firebase, and Supabase.">
     <meta name="author" content="Syarif Muhammad Fahri">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://syariffahri.com/">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="canonical" href="https://fahridrus.com/">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <meta name="theme-color" content="#00D4AA">
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://syariffahri.com/">
+    <meta property="og:url" content="https://fahridrus.com/">
     <meta property="og:title" content="Syarif Muhammad Fahri — Senior Flutter Developer">
-    <meta property="og:description"
-        content="Senior Flutter Developer dengan 5+ tahun pengalaman. Spesialisasi mobile apps berkualitas tinggi.">
-    <meta property="og:image" content="https://syariffahri.com/photo.jpg">
-
-    <!-- Twitter -->
+    <meta property="og:description" content="I build and ship complete Flutter products—not just screens.">
+    <meta property="og:image" content="https://fahridrus.com/assets/images/photo.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://syariffahri.com/">
     <meta name="twitter:title" content="Syarif Muhammad Fahri — Senior Flutter Developer">
-    <meta name="twitter:description"
-        content="Senior Flutter Developer dengan 5+ tahun pengalaman. Spesialisasi mobile apps berkualitas tinggi.">
-    <meta name="twitter:image" content="https://syariffahri.com/photo.jpg">
-
-    <!-- Fonts -->
+    <meta name="twitter:description" content="I build and ship complete Flutter products—not just screens.">
+    <meta name="twitter:image" content="https://fahridrus.com/assets/images/photo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-image-article {
+            background-color: #edf0ef !important;
+            background-size: contain !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
 
-    <!-- EmailJS -->
+        .hp-field {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 </head>
 
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#home" class="skip-link">Skip to main content</a>
-
-    <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#" class="nav-logo" aria-label="Home">SMF<span>.</span></a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="nav" aria-label="Main navigation">
+        <a href="#home" class="nav-logo" aria-label="Home">SMF<span>.</span></a>
         <div class="nav-menu" id="navMenu">
-            <a href="#about">About</a>
             <a href="#work">Work</a>
-            <a href="#skills">Skills</a>
+            <a href="#capabilities">Capabilities</a>
             <a href="#experience">Experience</a>
-            <a href="#contact" class="nav-cta">Let's Talk</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Let's talk <span>↗</span></a>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu"
-            aria-expanded="false"><span></span><span></span></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span></button>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Available for Projects
+    <main id="main-content">
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Senior Flutter Developer</p>
+                <h1>I build and ship complete <em>Flutter products.</em></h1>
+                <p class="hero-lead">Not just screens. I take mobile and web products from features and backend integrations to maintenance and production release.</p>
+                <div class="hero-actions">
+                    <a href="#work" class="button button-dark">View selected work <span>↗</span></a>
+                    <a href="#contact" class="button button-line">Start a conversation</a>
+                </div>
+                <div class="hero-proof"><span>Flutter</span><i></i><span>Firebase &amp; Supabase</span><i></i><span>Android • iOS • Web</span></div>
             </div>
-            <p class="hero-greeting">{ Hello, I'm }</p>
-            <h1 class="hero-name">
-                Syarif Muhammad<br>
-                <span class="hero-name-accent">Fahri</span>
-                <span class="hero-credentials">CSA, CPro</span>
-            </h1>
-            <p class="hero-title">Senior Flutter Developer</p>
-            <div class="hero-cta">
-                <a href="#work" class="btn-primary">View My Work</a>
-                <a href="#contact" class="btn-secondary">Contact Me</a>
+            <div class="hero-visual">
+                <div class="hero-photo-wrap"><img src="assets/images/photo.jpg" alt="Syarif Muhammad Fahri" class="hero-photo" width="400" height="480"></div>
+                <div class="credential-float"><strong>CSA</strong><span>Certified System Analyst</span></div>
+                <div class="credential-float credential-float-bottom"><strong>CPro</strong><span>Certified Programmer</span></div>
             </div>
-        </div>
-        <div class="hero-visual">
-            <img src="photo.jpg" alt="Syarif Muhammad Fahri - Senior Flutter Developer" class="hero-photo" width="400"
-                height="400">
-        </div>
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Running Ticker -->
-    <div class="ticker">
-        <div class="ticker-track">
-            <span>Flutter Development</span>
-            <span>•</span>
-            <span>Android & iOS</span>
-            <span>•</span>
-            <span>Clean Architecture</span>
-            <span>•</span>
-            <span>CI/CD Pipeline</span>
-            <span>•</span>
-            <span>E-commerce Apps</span>
-            <span>•</span>
-            <span>EdTech Solutions</span>
-            <span>•</span>
-            <span>Flutter Development</span>
-            <span>•</span>
-            <span>Android & iOS</span>
-            <span>•</span>
-            <span>Clean Architecture</span>
-            <span>•</span>
-            <span>CI/CD Pipeline</span>
-            <span>•</span>
-            <span>E-commerce Apps</span>
-            <span>•</span>
-            <span>EdTech Solutions</span>
-            <span>•</span>
-        </div>
-    </div>
+        <section class="proof-strip" aria-label="Professional highlights">
+            <div><strong>5+</strong><span>Years experience</span></div>
+            <div><strong>3</strong><span>Platforms shipped</span></div>
+            <div><strong>2</strong><span>BNSP certifications</span></div>
+            <div><strong>End-to-end</strong><span>Product ownership</span></div>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-header">
-                <span class="section-label">{ 01 }</span>
-                <h2>About Me</h2>
+        <section class="work section-dark" id="work">
+            <div class="section-intro"><p class="eyebrow">01 / Selected work</p><h2>Products I’ve helped<br><em>bring to life.</em></h2><p class="section-summary">A closer look at products where I owned the Flutter application work—from feature implementation and integrations to maintenance and release.</p></div>
+            <div class="featured-grid">
+                <article class="featured-card featured-card-large">
+                    <div class="project-image" style="background-image:url('assets/images/project-ulinrajut.jpg')"><span class="project-number">01</span></div>
+                    <div class="project-copy"><div class="project-meta"><span>Android • iOS</span><span>2024–2025</span></div><h3>Ulin Rajut</h3><p>Biodiversity documentation platform for flora and fauna research, knowledge sharing, and community contributions.</p><div class="project-footer"><span>Flutter • Maps SDK • User-generated content</span><span class="project-links"><a href="https://play.google.com/store/apps/details?id=com.fahutan.ulinrajut&amp;hl=id" target="_blank" rel="noopener noreferrer">Android ↗</a><a href="https://apps.apple.com/id/app/ulin-rajut/id6755760954" target="_blank" rel="noopener noreferrer">iOS ↗</a></span></div></div>
+                </article>
+                <article class="featured-card">
+                    <div class="project-image" style="background-image:url('assets/images/project-siremun.jpg')"><span class="project-number">02</span></div>
+                    <div class="project-copy"><div class="project-meta"><span>Android • iOS</span><span>2024–2025</span></div><h3>Siremun Tendik Untan</h3><p>Employee management application for Universitas Tanjungpura staff. Built from the ground up and owned through release and maintenance.</p><div class="project-footer"><span>Flutter • REST API • Authentication</span><a href="https://play.google.com/store/apps/details?id=com.siremuntendik.untan&amp;hl=id" target="_blank" rel="noopener noreferrer">Android ↗</a></div></div>
+                </article>
+                <article class="featured-card">
+                    <div class="project-image project-image-salawat" style="background-image:url('assets/images/project-salawat-app.png')"><span class="project-number">03</span></div>
+                    <div class="project-copy"><div class="project-meta"><span>Android • iOS</span><span>Mobile product</span></div><h3>Salawat App</h3><p>A bilingual Quran and salawat reading app for a global audience, maintained and released across Android and iOS.</p><div class="project-footer"><span>Flutter • Firebase • English / Indonesian</span><span class="project-links"><a href="https://play.google.com/store/apps/details?id=com.salawatapp.app" target="_blank" rel="noopener noreferrer">Android ↗</a><a href="https://apps.apple.com/us/app/salawat-app/id6789404751" target="_blank" rel="noopener noreferrer">iOS ↗</a></span></div></div>
+                </article>
+                <article class="featured-card">
+                    <div class="project-image project-image-article" style="background-image:url('assets/images/project-article-creator.png')"><span class="project-number">04</span></div>
+                    <div class="project-copy"><div class="project-meta"><span>Android • iOS • Web</span><span>In development</span></div><h3>Article Creator</h3><p>Cross-platform product for creating, editing, and analyzing articles, with OAuth, notifications, subscriptions, and payments.</p><div class="project-footer"><span>Flutter • Supabase • Firebase • PayPal / Stripe</span><span>Coming soon</span></div></div>
+                </article>
             </div>
-            <div class="about-content">
-                <p class="about-lead">
-                    Senior Mobile Developer specializing in <strong>Flutter</strong> with expertise in architecting
-                    scalable applications for <em>E-commerce</em> and <em>EdTech</em> sectors.
-                </p>
-                <p>
-                    Proficient in Clean Architecture, Riverpod, and CI/CD pipelines. Passionate about solving
-                    complex engineering problems and building impactful user experiences.
-                </p>
-                <div class="about-trust">
-                    <span class="trust-icon">✦</span>
-                    Trusted by <strong>Universitas Tanjungpura</strong> to build & maintain official mobile applications
-                </div>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <span class="stat-number" data-count="5">0</span>
-                    <span class="stat-plus">+</span>
-                    <span class="stat-label">Years<br>Experience</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" data-count="8">0</span>
-                    <span class="stat-plus">+</span>
-                    <span class="stat-label">Play Store<br>Apps</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" data-count="15">0</span>
-                    <span class="stat-plus">+</span>
-                    <span class="stat-label">Client<br>Projects</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Work Section -->
-    <section class="work" id="work">
-        <div class="work-container">
-            <div class="work-header">
-                <span class="section-label">{ 02 }</span>
-                <h2>Featured Projects</h2>
-            </div>
-            <div class="work-grid">
-                <!-- TOP 3: Featured Projects -->
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-siremun.jpg')"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">RestAPI • Riverpod • Chart</span>
-                        <h3>Siremun Tendik Untan</h3>
-                        <span class="work-year">2024-2025</span>
-                        <p>Employee management for university staff</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.siremuntendik.untan" target="_blank"
-                            rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-modelingpad.jpg')"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">CustomPainter • Hive</span>
-                        <h3>Modeling Pad</h3>
-                        <span class="work-year">2025-2026</span>
-                        <p>Offline-first vector graphics editor</p>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-ulinrajut.jpg')"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">iOS • Android • Maps SDK</span>
-                        <h3>Ulin Rajut</h3>
-                        <span class="work-year">2024-2025</span>
-                        <p>Biodiversity citizen science app with user-generated content</p>
-                        <a href="https://ulinrajut.untan.ac.id/" target="_blank" rel="noopener noreferrer"
-                            class="work-link">Visit Website →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image"
-                        style="background-image: url('project-temanbunda.png'); background-color: #d86fa0"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">GetX • Localization • Dio</span>
-                        <h3>Teman Bunda</h3>
-                        <span class="work-year">2025</span>
-                        <p>Pregnancy monitoring and documentation app with local health workers integration</p>
-                    </div>
-                </article>
-                <!-- Other Projects -->
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-qaraa.jpg')"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">Flutter • AI • EdTech</span>
-                        <h3>Qara'a - AI Quran Learning</h3>
-                        <span class="work-year">2020-2023</span>
-                        <p>AI-based Quran learning app with complex UI/UX and speech recognition</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.bismillah.amaljariyah&hl=id"
-                            target="_blank" rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-rqimamsyafii.jpg')"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">EdTech • Parental</span>
-                        <h3>RQ Imam Syafii</h3>
-                        <span class="work-year">2025</span>
-                        <p>Santri progress monitoring for parents</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.rumahquran.imamsyafii"
-                            target="_blank" rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image"
-                        style="background-image: url('project-wahdah.jpg'); background-color: #f0f0f0"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">Flutter • Islamic</span>
-                        <h3>Wahdah Islamiyah Kalbar</h3>
-                        <span class="work-year">2024</span>
-                        <p>Islamic organization mobile app for West Kalimantan</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.wahdahislamiyah.id" target="_blank"
-                            rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image"
-                        style="background-image: url('project-dakwahkalbar.jpg'); background-color: #fff"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">Flutter • Islamic</span>
-                        <h3>Dakwah Kalbar</h3>
-                        <span class="work-year">2024</span>
-                        <p>Islamic dakwah platform for West Kalimantan community</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.dakwahkalbar.id" target="_blank"
-                            rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-bmi.jpg'); background-color: #c76ec2">
-                    </div>
-                    <div class="work-overlay">
-                        <span class="work-tags">Flutter • Zakat • Finance</span>
-                        <h3>Zakat BMI</h3>
-                        <span class="work-year">2022</span>
-                        <p>Zakat management and payment application</p>
-                        <a href="https://play.google.com/store/apps/details?id=id.munzalan.bmi" target="_blank"
-                            rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image"
-                        style="background-image: url('project-spa-bmi.jpg'); background-color: #fff"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">Flutter • Business</span>
-                        <h3>SPA BMI</h3>
-                        <span class="work-year">2022</span>
-                        <p>Business management system application</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.bmi.spa" target="_blank"
-                            rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-                <article class="work-card">
-                    <div class="work-image" style="background-image: url('project-belanjasmart.jpg')"></div>
-                    <div class="work-overlay">
-                        <span class="work-tags">E-commerce • Payment</span>
-                        <h3>BelanjaSmart</h3>
-                        <span class="work-year">2021</span>
-                        <p>Supermarket e-commerce application</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.sangatmanis.app&hl=id"
-                            target="_blank" rel="noopener noreferrer" class="work-link">Play Store →</a>
-                    </div>
-                </article>
-            </div>
-            <p class="work-more">And many more applications delivered across various industries.</p>
-        </div>
-    </section>
+            <div class="additional-work"><div class="additional-heading"><p class="eyebrow">More work</p><p>Other products and applications I’ve contributed to.</p></div><div class="small-project-grid">
+                <article class="small-project"><span class="small-project-index">05</span><div><h3>Qara’a</h3><p>Quran learning app. My role covered feature implementation, API integration, and maintenance.</p><span>Flutter • EdTech</span></div><a href="https://play.google.com/store/apps/details?id=com.bismillah.amaljariyah&amp;hl=id" target="_blank" rel="noopener noreferrer">↗</a></article>
+                <article class="small-project"><span class="small-project-index">06</span><div><h3>Natural Dictionary</h3><p>Cross-platform language tool with word validation and explanation workflows.</p><span>Flutter • Supabase • Firebase</span></div><a href="https://naturaldictionary.org/" target="_blank" rel="noopener noreferrer">↗</a></article>
+                <article class="small-project"><span class="small-project-index">07</span><div><h3>Modeling Pad</h3><p>Offline drawing tool with local asset storage, editing, JSON import, and export.</p><span>CustomPainter • Hive</span></div></article>
+                <article class="small-project"><span class="small-project-index">08</span><div><h3>BelanjaSmart</h3><p>Local e-commerce product with cart, checkout, orders, and Xendit payment integration.</p><span>E-commerce • Xendit</span></div><a href="https://play.google.com/store/apps/details?id=com.sangatmanis.app&amp;hl=id" target="_blank" rel="noopener noreferrer">↗</a></article>
+                <article class="small-project"><span class="small-project-index">09</span><div><h3>Natural Dictionary Web</h3><p>Web delivery of the Natural Dictionary product for a broader audience.</p><span>Flutter Web • OAuth • Notifications</span></div><a href="https://naturaldictionary.org/" target="_blank" rel="noopener noreferrer">↗</a></article>
+                <article class="small-project"><span class="small-project-index">10</span><div><h3>Wahdah Islamiyah Kalbar</h3><p>Mobile application for an Islamic organization in West Kalimantan.</p><span>Flutter • Android</span></div><a href="https://play.google.com/store/apps/details?id=com.wahdahislamiyah.id" target="_blank" rel="noopener noreferrer">↗</a></article>
+            </div></div>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="skills-container">
-            <div class="skills-header">
-                <span class="section-label">{ 03 }</span>
-                <h2>Skills & Tools</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card skill-primary">
-                    <div class="skill-icon"><i class="devicon-flutter-plain"></i></div>
-                    <h3>Flutter</h3>
-                    <p>Cross-platform development for Android, iOS, Web, Windows & MacOS</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Core Expertise</h3>
-                    <div class="skill-tags">
-                        <span>Clean Architecture</span>
-                        <span>Riverpod</span>
-                        <span>SOLID Principles</span>
-                        <span>Unit Testing</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Development</h3>
-                    <div class="skill-tags">
-                        <span>RestAPI</span>
-                        <span>CI/CD</span>
-                        <span>Widget Testing</span>
-                        <span>Custom Painter</span>
-                        <span>Freezed</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Backend & Services</h3>
-                    <div class="skill-tags">
-                        <span>Firebase</span>
-                        <span>Supabase</span>
-                        <span>Payment Gateway</span>
-                        <span>Push Notifications</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Tools</h3>
-                    <div class="skill-tags">
-                        <span>Git Flow</span>
-                        <span>Jira</span>
-                        <span>Trello</span>
-                        <span>App Size Optimization</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Certifications -->
-            <div class="certs">
-                <h3>Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-card" onclick="window.open('cert-csa.pdf', '_blank')">
-                        <img src="bnsp-logo.png" alt="BNSP" class="cert-logo">
-                        <div class="cert-info">
-                            <strong>Certified System Analyst (CSA)</strong>
-                            <span>BNSP • Valid 2025-2028</span>
-                        </div>
-                        <span class="cert-badge">Active <svg class="eye-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                            </svg></span>
-                    </div>
-                    <div class="cert-card" onclick="window.open('cert-cpro.pdf', '_blank')">
-                        <img src="bnsp-logo.png" alt="BNSP" class="cert-logo">
-                        <div class="cert-info">
-                            <strong>Certified Professional Programmer</strong>
-                            <span>BNSP • Valid 2025-2028</span>
-                        </div>
-                        <span class="cert-badge">Active <svg class="eye-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                            </svg></span>
-                    </div>
-                    <div class="cert-card"
-                        onclick="window.open('https://www.dicoding.com/certificates/6RPNYE3O8Z2M', '_blank')">
-                        <img src="dicoding.png" alt="Dicoding" class="cert-logo">
-                        <div class="cert-info">
-                            <strong>Belajar Prinsip Pemrograman SOLID</strong>
-                            <span>Dicoding Indonesia</span>
-                        </div>
-                        <span class="cert-badge">Active <svg class="eye-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                            </svg></span>
-                    </div>
-                    <div class="cert-card"
-                        onclick="window.open('https://www.skillshare.com/en/certificates/92ab28d3-9e54-4e47-94d8-4a6b39d71424', '_blank')">
-                        <img src="skillshare.png" alt="Skillshare" class="cert-logo">
-                        <div class="cert-info">
-                            <strong>Flutter Blog App Using Firestore</strong>
-                            <span>Skillshare</span>
-                        </div>
-                        <span class="cert-badge">Active <svg class="eye-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                            </svg></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="capabilities" id="capabilities"><div class="section-intro"><p class="eyebrow">02 / Capabilities</p><h2>From product idea<br><em>to production.</em></h2><p class="section-summary">The work behind a reliable product is more than UI. These are the areas I work across.</p></div><div class="capability-grid">
+            <article><span class="capability-icon">01</span><h3>Build the product</h3><p>Flutter applications for Android, iOS, and Web with maintainable structure and real product workflows.</p><span class="capability-tags">Flutter / Custom UI / Offline-first</span></article>
+            <article><span class="capability-icon">02</span><h3>Connect the systems</h3><p>Authentication, REST APIs, OAuth, Firebase, Supabase, FCM, local databases, and file/PDF workflows.</p><span class="capability-tags">Firebase / Supabase / REST API</span></article>
+            <article><span class="capability-icon">03</span><h3>Ship and maintain</h3><p>Production releases, payment integrations, notifications, ongoing maintenance, and product improvements.</p><span class="capability-tags">Payments / Release / Maintenance</span></article>
+        </div></section>
 
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="experience-container">
-            <div class="experience-header">
-                <span class="section-label">{ 04 }</span>
-                <h2>Experience</h2>
-            </div>
-            <div class="experience-grid">
-                <article class="exp-card exp-current">
-                    <div class="exp-date">2023 — Present</div>
-                    <div class="exp-content">
-                        <h3>Mobile Developer</h3>
-                        <p class="exp-company">UPT TIK Universitas Tanjungpura</p>
-                        <p class="exp-desc">Architected mobile solutions for university management. Optimized legacy
-                            codebases for UI rendering speed and crash reduction.</p>
-                        <div class="exp-tags">
-                            <span>Flutter</span>
-                            <span>Clean Architecture</span>
-                            <span>Git Flow</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="exp-card">
-                    <div class="exp-date">2020 — 2023</div>
-                    <div class="exp-content">
-                        <h3>Mobile Developer</h3>
-                        <p class="exp-company">PT Kreasi Putra Hotama</p>
-                        <p class="exp-desc">Built AI-based Quran learning app (Qara'a), e-commerce platforms, managed
-                            releases to Play Store & App Store.</p>
-                        <div class="exp-tags">
-                            <span>Flutter</span>
-                            <span>Play Store</span>
-                            <span>App Store</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="exp-card">
-                    <div class="exp-date">Ongoing</div>
-                    <div class="exp-content">
-                        <h3>Freelancer</h3>
-                        <p class="exp-company">Remote • International</p>
-                        <p class="exp-desc">Available for remote mobile development projects. Specialized in custom
-                            Flutter solutions with advanced UI.</p>
-                        <div class="exp-tags">
-                            <span>Freelance</span>
-                            <span>Remote</span>
-                            <span>CustomPainter</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="education">
-                <h3>Education</h3>
-                <p><strong>Software Engineering</strong> — Vocational High School 7 Pontianak<br>
-                    <span class="edu-date">2019 — 2021 • Pontianak, Indonesia</span>
-                </p>
-            </div>
-        </div>
-    </section>
+        <section class="process section-light"><div class="process-heading"><p class="eyebrow">03 / Ownership</p><h2>Good products need<br><em>follow-through.</em></h2></div><div class="process-list"><div><span>01</span><h3>Understand the product</h3><p>Clarify the user, workflow, and technical requirements before implementation.</p></div><div><span>02</span><h3>Build the right foundation</h3><p>Turn the product requirements into a Flutter application that can grow and be maintained.</p></div><div><span>03</span><h3>Get it into production</h3><p>Handle integrations, testing, release, and the improvements that follow launch.</p></div></div></section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-header">
-                <span class="section-label">{ 05 }</span>
-                <h2>Let's Work<br>Together</h2>
-                <p>Looking for a Senior Flutter Developer? Available for remote work.</p>
-            </div>
-            <div class="contact-grid">
-                <a href="mailto:syariffahri26@gmail.com" class="contact-card">
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">syariffahri26@gmail.com</span>
-                </a>
+        <section class="experience section-dark" id="experience"><div class="section-intro"><p class="eyebrow">04 / Experience</p><h2>Experience that stays<br><em>close to the product.</em></h2></div><div class="timeline"><article><div class="timeline-date">2023 — Present</div><div><h3>Flutter Developer</h3><p class="timeline-company">UPT TIK Universitas Tanjungpura</p><p>Architect and maintain mobile solutions for university management. Built and supported applications across development, improvement, and production quality.</p><div class="timeline-tags"><span>Flutter</span><span>Android &amp; iOS</span><span>Maintenance</span><span>Release</span></div></div></article><article><div class="timeline-date">2020 — 2023</div><div><h3>Mobile Developer</h3><p class="timeline-company">PT Kreasi Putra Hotama</p><p>Built product features for Qara’a and e-commerce applications, including API integration and production releases to Google Play Store and Apple App Store.</p><div class="timeline-tags"><span>Flutter</span><span>API Integration</span><span>Play Store</span><span>App Store</span></div></div></article><article><div class="timeline-date">Ongoing</div><div><h3>Freelance Flutter Developer</h3><p class="timeline-company">Remote • International</p><p>Build custom Flutter solutions for remote clients across mobile and web, with a focus on advanced UI, integrations, and complete feature delivery.</p><div class="timeline-tags"><span>Flutter</span><span>Mobile &amp; Web</span><span>Product Delivery</span></div></div></article></div></section>
 
-                <a href="https://linkedin.com/in/syarif-muhammad-fahri-6671a5228" target="_blank"
-                    rel="noopener noreferrer" class="contact-card">
-                    <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">Connect <svg class="eye-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                        </svg></span>
-                </a>
-                <a href="https://github.com/Syariffahri" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <span class="contact-label">GitHub</span>
-                    <span class="contact-value">View Profile <svg class="eye-icon" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                        </svg></span>
-                </a>
-                <div class="contact-card">
-                    <span class="contact-label">Location</span>
-                    <span class="contact-value">Pontianak, Indonesia</span>
-                </div>
-            </div>
-            <form class="contact-form" id="contactForm">
-                <h3>Send a Message</h3>
-                <!-- Honeypot field for spam protection - hidden from users -->
-                <div class="hp-field" aria-hidden="true">
-                    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
-                </div>
-                <div class="form-row">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-                <input type="text" id="subject" placeholder="Subject">
-                <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <section class="about section-light" id="about"><div class="about-layout"><div><p class="eyebrow">05 / About</p><h2>A developer who<br><em>owns the outcome.</em></h2></div><div><p class="about-lead">I’m Syarif Muhammad Fahri, a Senior Flutter Developer with 5+ years of experience building and shipping complete products.</p><p>I work across the application layer and the product workflow around it: backend integrations, authentication, payments, notifications, local data, release, and maintenance.</p><p class="about-location">Based in Pontianak, Indonesia<br>Available for remote work</p></div></div><div class="certification-bar"><div><p class="eyebrow">Professional credentials</p><h3>Certified in analysis and software development.</h3></div><div class="certification-links"><a href="assets/certifications/cert-csa.pdf" target="_blank" rel="noopener noreferrer"><strong>CSA</strong><span>Certified System Analyst ↗</span></a><a href="assets/certifications/cert-cpro.pdf" target="_blank" rel="noopener noreferrer"><strong>CPro</strong><span>Certified Programmer ↗</span></a></div></div></section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>© 2026 Syarif Muhammad Fahri</p>
-        </div>
-    </footer>
-
+        <section class="contact section-dark" id="contact"><div class="contact-layout"><div><p class="eyebrow">06 / Contact</p><h2>Have a product to build, improve, or take to <em>production?</em></h2><p>Tell me what you’re building, where you are stuck, and what needs to ship next.</p><div class="contact-links"><a href="https://linkedin.com/in/syarif-muhammad-fahri-6671a5228" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/Syariffahri" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="contact-actions"><a href="mailto:syariffahri26@gmail.com" class="contact-email">syariffahri26@gmail.com <span>↗</span></a><form class="contact-form" id="contactForm"><div class="hp-field" aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div><div class="form-row"><input type="text" id="name" placeholder="Your name" maxlength="100" required><input type="email" id="email" placeholder="Your email" maxlength="254" required></div><input type="text" id="subject" placeholder="What are you building?" maxlength="160"><textarea id="message" rows="4" placeholder="Tell me about your project..." maxlength="3000" required></textarea><button type="submit" class="button button-accent">Send message <span>↗</span></button></form></div></div></section>
+    </main>
+    <footer class="footer"><span>© 2026 Syarif Muhammad Fahri</span><span>Senior Flutter Developer</span></footer>
     <script src="script.js"></script>
 </body>
 
